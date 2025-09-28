@@ -1,0 +1,111 @@
+*{padding: 0;margin: 0;}
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    background-color: #F3E0C1;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container .sides{
+    /* background-color: blue; */
+    height: 95%;
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container .sides .side1, .side2{
+    height: 100%;
+    width: 6%;
+    background-color: #B91E12;
+}
+
+.container .sides .side1 nav, .side2 nav{
+    height: 100%;
+    width: 75%;
+    background-color: #FF3E19;
+}
+
+.side1 nav{
+    justify-self: end;
+}
+
+.container .main-content{
+    background: linear-gradient(  
+        135deg, 
+        #F2CB05 0%, 
+        #F29C14 39%, 
+        #F24949 75%
+    );
+    height: 100%;
+    width: calc(100% - 12%);
+
+    position: relative;
+}
+
+.container .main-content #target-space{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* background-color: antiquewhite; */
+}
+
+.container .main-content #target-space .content-target{
+    /* background-color: blueviolet; */
+    height: calc(100% - 8%);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.container .main-content #target1, #target2{
+    height: 10%;
+    width: 70%;
+    /* background-color: aqua; */
+
+    display: flex;
+    align-items: center;
+}
+
+.container .main-content nav #absolut-target1{
+    height: auto;
+    z-index: 10;
+
+    /* transform: translate(250%); */
+    /* ALTERAR ISSO AQUI CASO QUEIRA MODIFICAR A POSIÇAO DO ALVO */
+}
+
+.container .main-content nav #absolut-target2{
+    height: auto;
+    z-index: 10;
+
+    transform: translate(250%);
+    /* ALTERAR ISSO AQUI CASO QUEIRA MODIFICAR A POSIÇAO DO ALVO */
+}
+
+.container .main-content .footer-style{
+    width: 100%;
+    height: 8%;
+    background-color: #F3E0C1;
+    position: absolute;
+    z-index: 1;
+}
+
+.container .main-content .background-vetor{
+    left: 1%;
+    position: absolute;
+}
+
+.container .main-content .content-target{
+    display: flex;
+}
