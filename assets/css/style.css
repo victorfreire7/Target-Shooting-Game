@@ -1,8 +1,10 @@
-*{padding: 0;margin: 0;}
+*{padding: 0;margin: 0;outline: none;user-select: none;}
 
 body{
     overflow: hidden;
 }
+
+
 
 .container{
     background-color: #F3E0C1;
@@ -69,28 +71,22 @@ body{
 }
 
 .container .main-content #target1, #target2{
-    height: 10%;
+    height: 1%;
     width: 70%;
     /* background-color: aqua; */
+    z-index: 1;
 
     display: flex;
     align-items: center;
 }
 
-.container .main-content nav #absolut-target1{
+svg{
+    transition: 0.2s;
     height: auto;
-    z-index: 10;
+    z-index: 1;
 
-    /* transform: translate(250%); */
-    /* ALTERAR ISSO AQUI CASO QUEIRA MODIFICAR A POSIÇAO DO ALVO */
-}
-
-.container .main-content nav #absolut-target2{
-    height: auto;
-    z-index: 10;
-
-    transform: translate(250%);
-    /* ALTERAR ISSO AQUI CASO QUEIRA MODIFICAR A POSIÇAO DO ALVO */
+    position: absolute;
+    z-index: 2;
 }
 
 .container .main-content .footer-style{
@@ -104,8 +100,36 @@ body{
 .container .main-content .background-vetor{
     left: 1%;
     position: absolute;
+    pointer-events: none
 }
 
 .container .main-content .content-target{
     display: flex;
+}
+
+#info{
+    position: fixed;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    width: 15vw;
+    top: 2%;
+    right: 2%;
+    background-color: azure;
+}
+
+#lvl, #points, #bullets{
+    /* background-color: red; */
+
+    height: 50%;
+    width: 100%;
+
+    display: flex;
+    justify-content: end;
+    align-items: end;
+
+    font-size: 3em;
+    padding: 1px;
 }
