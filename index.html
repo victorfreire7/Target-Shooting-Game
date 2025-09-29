@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="shortcut icon" href="assets/img/alvos.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/alvos.svg" type="image/x-icon">
     <title>Tiro ao Alvo</title>
 </head>
 <body>
@@ -17,13 +17,33 @@
             <main class="main-content">
                 <div id="target-space">
                     <main class="content-target">
-
+                        <header id="info">
+                            <p id="bullets"></p>
+                            <p id="lvl"></p>
+                            <p id="points"></p>
+                        </header>
                         <nav id="target1">
-                            <img src="assets/img/alvos.svg" id="absolut-target1" alt="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="338" height="352" viewBox="0 0 338 352" fill="none" class="target">
+                                <circle cx="169" cy="183" r="169" fill="#092340"/>
+                                <circle cx="183.5" cy="187.5" r="79.5" fill="#092340"/>
+                                <circle cx="169" cy="169" r="169" fill="#003E83"/>
+                                <circle cx="169" cy="169" r="127.5" stroke="#FF4829" stroke-width="27"/>
+                                <circle cx="169.5" cy="169.5" r="79.5" fill="#FF4829"/>
+                                <circle cx="169.5" cy="168.5" r="36.5" stroke="#FFC619" stroke-width="24"/>
+                                <circle cx="169.5" cy="168.5" r="24.5" fill="#FF4829" class="1000points" />
+                            </svg>
                         </nav>
     
                         <nav id="target2">
-                            <img src="assets/img/alvos.svg" id="absolut-target2" alt="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="338" height="352" viewBox="0 0 338 352" fill="none" class="target" style="transform: translate(250%);">
+                                    <circle cx="169" cy="183" r="169" fill="#092340"/>
+                                    <circle cx="183.5" cy="187.5" r="79.5" fill="#092340"/>
+                                    <circle cx="169" cy="169" r="169" fill="#003E83"/>
+                                    <circle cx="169" cy="169" r="127.5" stroke="#FF4829" stroke-width="27"/>
+                                    <circle cx="169.5" cy="169.5" r="79.5" fill="#FF4829"/>
+                                    <circle cx="169.5" cy="168.5" r="36.5" stroke="#FFC619" stroke-width="24"/>
+                                    <circle cx="169.5" cy="168.5" r="24.5" fill="#FF4829" class="1000points" />
+                                </svg>
                         </nav>
                     </main>
                     <footer class="footer-style"></footer>
@@ -34,9 +54,7 @@
                 <nav></nav>
             </section>
         </div>
-        
     </div>
-
     <script src="/assets/js/script.js"></script>
 </body>
 </html>
