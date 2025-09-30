@@ -1,11 +1,68 @@
 *{padding: 0;margin: 0;outline: none;user-select: none;}
 
+@keyframes aparecerAlvo{
+    0%{
+        /* background-image: url(../img/alvo-quebrado.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:contain; */
+        opacity: 0;
+        transition: .2s linear;
+        z-index: 11;
+    }
+
+    100%{
+        opacity: 1;
+        /* transition: .2s linear;      
+        background-image: url(../img/alvo-quebrado.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:contain; */
+        
+    }
+    
+}
+
 body{
     overflow: hidden;
+
+}
+
+button{
+    transition: .2s linear;
 }
 
 
+button:hover{
+    cursor: pointer;
+    transition: .2s linear;
+    transform: translateY(-5px);
+}
 
+button:active{
+    cursor: pointer;
+    transition: .2s linear;
+    transform: translateY(6px);
+}
+header#info{
+    z-index: 10;
+}
+
+main:hover{
+    cursor: url('../img/mira-fechada.png') 47 45, auto;
+    transition: 0.3s linear;
+}
+
+main:active{
+    transition: 0.3s linear;
+    cursor: url('../img/mira-aberta.png') 57 55, auto;
+}
+        
+    
+.target{
+    z-index: 1;
+    animation: 1s aparecerAlvo;
+}
 .container{
     background-color: #F3E0C1;
     width: 100vw;
@@ -27,6 +84,8 @@ body{
     height: 100%;
     width: 6%;
     background-color: #B91E12;
+    /* position: absolute; */
+    z-index: 10;
 }
 
 .container .sides .side1 nav, .side2 nav{
@@ -91,10 +150,10 @@ svg{
 
 .container .main-content .footer-style{
     width: 100%;
-    height: 8%;
+    height: 13.5%;
     background-color: #F3E0C1;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 
 .container .main-content .background-vetor{
@@ -118,6 +177,7 @@ svg{
     top: 2%;
     right: 2%;
     background-color: azure;
+    z-index: 11;
 }
 
 #lvl, #points, #bullets{
@@ -132,4 +192,53 @@ svg{
 
     font-size: 3em;
     padding: 1px;
+}
+
+.menuRestart{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 15vw;
+    height: 20vh;
+    z-index: 12;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color:darkviolet;
+    display: none;
+    border-radius: 10px;
+}
+
+.menuRestart p{
+    z-index: 12;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    font-size: 2em;
+    background-color:rgb(65, 117, 160);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.menuRestart button{
+    margin-top: 20px;
+    z-index: 12;
+    width: 10vw;
+    height: 5vh;
+    font-size: 1.5em;
+    background-color: purple;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.main-content .target-space .content-target .boss{
+    z-index: 1;
+    position: absolute;
+    transition: 2s;
 }
