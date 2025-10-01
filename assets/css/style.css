@@ -1,4 +1,9 @@
-*{padding: 0;margin: 0;outline: none;user-select: none;}
+*{padding: 0;margin: 0;outline: none;user-select: none; font-family: 'Jersey', Arial;}
+
+@font-face {
+    font-family: 'Jersey';
+    src: url('../font/Jersey_10/Jersey10-Regular.ttf');
+}
 
 @keyframes aparecerAlvo{
     0%{
@@ -177,12 +182,14 @@ svg{
     top: 2%;
     right: 2%;
     background-color: azure;
+    border-radius: 15px;
     z-index: 11;
 }
 
-#lvl, #points, #bullets{
+#lvl, #points, #bullets, #bossLife{
     /* background-color: red; */
 
+    /* color: white; */
     height: 50%;
     width: 100%;
 
@@ -209,7 +216,7 @@ svg{
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    background-color:darkviolet;
+    background-color:#48234F;
     display: none;
     border-radius: 10px;
 }
@@ -220,9 +227,10 @@ svg{
     height: auto;
     margin-top: 20px;
     font-size: 2em;
-    background-color:rgb(65, 117, 160);
+    background-color:#48234F;
     text-align: center;
     font-family: sans-serif;
+    color: white;
 }
 
 .menuRestart button{
@@ -231,7 +239,7 @@ svg{
     width: 10vw;
     height: 5vh;
     font-size: 1.5em;
-    background-color: purple;
+    background-color: #48234F;
     color: white;
     border: 2px solid white;
     border-radius: 10px;
@@ -241,4 +249,15 @@ svg{
     z-index: 1;
     position: absolute;
     transition: 2s;
+}
+
+.container .start-menu{
+    position: fixed;
+    left: 20%;
+    top: 10%;
+    z-index: 15;
+}
+
+.container .start-menu .start-button{
+    cursor: pointer;
 }
