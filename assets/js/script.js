@@ -2,7 +2,7 @@ class Game {
     constructor(){
         this.targets = document.querySelectorAll('.target');
         this.content_area = document.querySelector('.content-target');
-        this.clown_SVG = document.querySelector('.boss');
+        this.clown_SVG = document.querySelectorAll('.boss');
         this.bullet = 5;
         this.level = 1;
         this.points = 0;
@@ -110,8 +110,8 @@ class Game {
       setTimeout(() => {
         let count = 0;
         const interval = setInterval(() => {
-          this.clown_SVG.style.display = '';
-          this.clown_SVG.style.opacity = count += 0.1
+          this.clown_SVG[0].style.display = '';
+          this.clown_SVG[0].style.opacity = count += 0.1
         }, 200);
 
         setTimeout(() => {
@@ -122,7 +122,10 @@ class Game {
 
     moveBoss(){
         setInterval(() => {
-            this.clown_SVG.style.left = `${this.returnRandomNumber(-10, 80)}%`
+            let random = this.returnRandomNumber(-10, 80);
+            for (const element of this.clown_SVG) {
+                element.style.left = `${random}%`
+            }
         }, 800);
     }
     
@@ -219,9 +222,12 @@ class Game {
     }
 
     addHTML(){
-        document.querySelector('#bullets').textContent = `bullet: ${this.bullet}`;
-        document.querySelector('#lvl').textContent = `lv: ${this.level}`;
-        document.querySelector('#points').textContent = `points: ${this.points}`;
+        document.querySelector('#bullets').textContent = `Balas: ${this.bullet}`;
+        document.querySelector('#lvl').textContent = `Level: ${this.level}`;
+        document.querySelector('#points').textContent = `Pontos: ${this.points}`;
+        if(this.level === 4 ){
+            document.querySelector('#bossLife').textContent = `boss: ${this.boss_life}/15`
+        } 
     }
 
     deleteBallon(){
@@ -275,6 +281,8 @@ class Game {
                   el.parentNode.remove()
                 }
                 if(el.classList.contains('clown-nose')){
+                    this.bossDamageStyle();
+                    
                     this.boss_life -= 1;
                     this.points += 500;
                     this.ballonGeneratatorAuthentication();
@@ -284,6 +292,16 @@ class Game {
                 this.addHTML();
             }
         });
+    }
+
+    bossDamageStyle(){
+        this.clown_SVG[0].style.display = 'none';
+        this.clown_SVG[1].style.display = 'flex';
+
+        setTimeout(() => {
+            this.clown_SVG[1].style.display = 'none';
+            this.clown_SVG[0].style.display = 'flex';
+        }, 1 * 1000 + 500);
     }
 
     targetStyle(arg) {
@@ -316,14 +334,17 @@ class Game {
 }
 
 let g = new Game();
-g.startGame();
-// g.startGame();
 
 document.addEventListener('click', (e) => {
-    const button = e.target
+    const el = e.target
 
-    if(button.classList.contains('reiniciar')){
+    if(el.classList.contains('reiniciar')){
         location.reload();
+    }
+
+    if(el.classList.contains('start-button')){
+        el.parentNode.remove();
+        g.startGame();
     }
     
 })
